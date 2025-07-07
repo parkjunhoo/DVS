@@ -27,6 +27,11 @@ namespace DVS.Forms
             //ssItemList.Visible = false;
 
         }
+        private void CheckPriceForm_Load(object sender, EventArgs e)
+        {
+            splitContainerControl1.SplitterPosition = this.Width / 2;
+        }
+
 
 
         //스프레드시트 우클릭 커스텀 이벤트
@@ -134,12 +139,6 @@ namespace DVS.Forms
                 }
             }
         }
-
-        private void CheckPriceForm_Load(object sender, EventArgs e)
-        {
-            splitContainerControl1.SplitterPosition = this.Width / 2;
-        }
-
         //(TEST)
         private void btnSearchItemName_ItemClick(object sender, ItemClickEventArgs e)
         {
