@@ -68,7 +68,7 @@
             Appearance.Options.UseFont = true;
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(590, 238);
+            ClientSize = new Size(582, 234);
             Controls.Add(btn_exit);
             Controls.Add(btn_openCheckPrice);
             Font = new Font("맑은 고딕", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);

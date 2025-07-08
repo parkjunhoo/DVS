@@ -34,13 +34,13 @@
             btnOpenItemList = new DevExpress.XtraBars.BarButtonItem();
             btnSearchItemName = new DevExpress.XtraBars.BarButtonItem();
             btnPriceValidation = new DevExpress.XtraBars.BarButtonItem();
+            btnPriceVEdit = new DevExpress.XtraBars.BarButtonItem();
             ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             ssInvoice = new DevExpress.XtraSpreadsheet.SpreadsheetControl();
             ssItemList = new DevExpress.XtraSpreadsheet.SpreadsheetControl();
-            barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)ribbonControl1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainerControl1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainerControl1.Panel1).BeginInit();
@@ -52,8 +52,9 @@
             // 
             // ribbonControl1
             // 
+            ribbonControl1.AllowMinimizeRibbon = false;
             ribbonControl1.ExpandCollapseItem.Id = 0;
-            ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { ribbonControl1.ExpandCollapseItem, btnOpenInvoice, btnOpenItemList, btnSearchItemName, btnPriceValidation, barButtonItem1 });
+            ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { ribbonControl1.ExpandCollapseItem, btnOpenInvoice, btnOpenItemList, btnSearchItemName, btnPriceValidation, btnPriceVEdit });
             ribbonControl1.Location = new Point(0, 0);
             ribbonControl1.MaxItemId = 6;
             ribbonControl1.Name = "ribbonControl1";
@@ -71,7 +72,7 @@
             ribbonControl1.ShowPageKeyTipsMode = DevExpress.XtraBars.Ribbon.ShowPageKeyTipsMode.Hide;
             ribbonControl1.ShowQatLocationSelector = false;
             ribbonControl1.ShowToolbarCustomizeItem = false;
-            ribbonControl1.Size = new Size(823, 151);
+            ribbonControl1.Size = new Size(800, 151);
             ribbonControl1.Toolbar.ShowCustomizeItem = false;
             ribbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
@@ -107,6 +108,15 @@
             btnPriceValidation.Id = 4;
             btnPriceValidation.ImageOptions.Image = (Image)resources.GetObject("btnPriceValidation.ImageOptions.Image");
             btnPriceValidation.Name = "btnPriceValidation";
+            btnPriceValidation.ItemClick += btnPriceValidation_ItemClick;
+            // 
+            // btnPriceVEdit
+            // 
+            btnPriceVEdit.Caption = "단가 검증&수정";
+            btnPriceVEdit.Id = 5;
+            btnPriceVEdit.ImageOptions.Image = (Image)resources.GetObject("barButtonItem1.ImageOptions.Image");
+            btnPriceVEdit.Name = "btnPriceVEdit";
+            btnPriceVEdit.ItemClick += btnPriceVEdit_ItemClick;
             // 
             // ribbonPage1
             // 
@@ -125,7 +135,7 @@
             // 
             ribbonPageGroup2.ItemLinks.Add(btnSearchItemName);
             ribbonPageGroup2.ItemLinks.Add(btnPriceValidation);
-            ribbonPageGroup2.ItemLinks.Add(barButtonItem1);
+            ribbonPageGroup2.ItemLinks.Add(btnPriceVEdit);
             ribbonPageGroup2.Name = "ribbonPageGroup2";
             ribbonPageGroup2.Text = "기능";
             // 
@@ -144,7 +154,7 @@
             // 
             splitContainerControl1.Panel2.Controls.Add(ssItemList);
             splitContainerControl1.Panel2.Text = "Panel2";
-            splitContainerControl1.Size = new Size(823, 459);
+            splitContainerControl1.Size = new Size(800, 433);
             splitContainerControl1.SplitterPosition = 447;
             splitContainerControl1.TabIndex = 1;
             // 
@@ -154,7 +164,7 @@
             ssInvoice.Location = new Point(0, 0);
             ssInvoice.MenuManager = ribbonControl1;
             ssInvoice.Name = "ssInvoice";
-            ssInvoice.Size = new Size(447, 459);
+            ssInvoice.Size = new Size(447, 433);
             ssInvoice.TabIndex = 0;
             ssInvoice.Text = "spreadsheetControl1";
             ssInvoice.KeyDown += SpreadsheetControl_KeyDown;
@@ -165,24 +175,17 @@
             ssItemList.Location = new Point(0, 0);
             ssItemList.MenuManager = ribbonControl1;
             ssItemList.Name = "ssItemList";
-            ssItemList.Size = new Size(370, 459);
+            ssItemList.Size = new Size(347, 433);
             ssItemList.TabIndex = 1;
             ssItemList.Text = "spreadsheetControl2";
             ssItemList.KeyDown += SpreadsheetControl_KeyDown;
-            // 
-            // barButtonItem1
-            // 
-            barButtonItem1.Caption = "품목명 변환하기";
-            barButtonItem1.Id = 5;
-            barButtonItem1.ImageOptions.Image = (Image)resources.GetObject("barButtonItem1.ImageOptions.Image");
-            barButtonItem1.Name = "barButtonItem1";
             // 
             // CheckPriceForm
             // 
             Appearance.Options.UseFont = true;
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(823, 598);
+            ClientSize = new Size(800, 571);
             Controls.Add(splitContainerControl1);
             Controls.Add(ribbonControl1);
             IconOptions.Image = (Image)resources.GetObject("CheckPriceForm.IconOptions.Image");
@@ -213,6 +216,6 @@
         private DevExpress.XtraBars.BarButtonItem btnSearchItemName;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.BarButtonItem btnPriceValidation;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem btnPriceVEdit;
     }
 }

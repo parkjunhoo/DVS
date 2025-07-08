@@ -17,11 +17,10 @@ namespace DVS
         [STAThread]
         static void Main()
         {
-            var skinCreator = new SkinBlobXmlCreator("dsvskin", "DVS.Skins", typeof(Program).Assembly, null);
-            DevExpress.XtraEditors.WindowsFormsSettings.RegisterUserSkin(skinCreator);
-            DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle("dsvskin");
+            Assembly asm = typeof(DevExpress.UserSkins.DsvSkin).Assembly;
+            DevExpress.XtraEditors.WindowsFormsSettings.RegisterUserSkins(asm);
 
-            ApplicationConfiguration.Initialize();
+            DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle("dsvSkin");
             Application.Run(new MainForm());
         }
     }

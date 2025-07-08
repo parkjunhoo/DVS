@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net9.0-windows</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -32,6 +32,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Skins\*.blob" />
     <EmbeddedResource Include="Skins\*.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="DsvSkin">
+      <HintPath>..\..\..\..\..\..\Documents\My DXSkins\DsvSkin\DsvSkin.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
